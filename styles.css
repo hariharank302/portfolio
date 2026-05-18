@@ -326,7 +326,7 @@ h1 span {
     font-size: 1.7rem;
 }
 
-.hero-panel > p {
+.hero-panel>p {
     text-align: center;
     color: var(--muted);
     margin-bottom: 22px;
@@ -642,10 +642,10 @@ pre {
     transition: 0.2s;
 }
 
-.input-group input:focus + label,
-.input-group textarea:focus + label,
-.input-group input:not(:placeholder-shown) + label,
-.input-group textarea:not(:placeholder-shown) + label {
+.input-group input:focus+label,
+.input-group textarea:focus+label,
+.input-group input:not(:placeholder-shown)+label,
+.input-group textarea:not(:placeholder-shown)+label {
     top: -10px;
     left: 12px;
     padding: 0 8px;
@@ -1009,12 +1009,34 @@ pre {
         font-size: 0.72rem;
     }
 }
+
+/* RESPONSIVE MEDIA */
+img,
+svg {
+    max-width: 100%;
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* ACCESSIBILITY */
 :focus-visible {
     outline: 3px solid var(--primary);
     outline-offset: 3px;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
     font: inherit;
 }
